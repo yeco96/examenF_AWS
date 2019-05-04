@@ -5,17 +5,16 @@
 
 
 
-	if(isset($_POST['codigo']) && isset($_POST['descripcion']) && isset($_POST['tipo']) && isset($_POST['fechaIngreso'])  
-		&& isset($_POST['precio']) )
+	if(isset($_POST['id']) && isset($_POST['admin']) && isset($_POST['contrasena']) && isset($_POST['nombre'])  
+		)
 	{
 
 	include("../../conexion/bd.php");
 
-		$libro = new libro($_POST['codigo'], $_POST['descripcion'], $_POST['tipo'], $_POST['fechaIngreso'], $_POST['precio']);
+		$usuario = new usuario($_POST['id'], $_POST['admin'], $_POST['contrasena'], $_POST['nombre']);
 
-		$query = "INSERT INTO libro(codigo, descripcion, tipo, fechaIngreso, precio) 
-		VALUES('".$libro->getCodigo()."', '".$libro->getDescripcion()."', '".$libro->getTipo()."', '".$libro->getFechaIngreso()."', 
-		'".$libro->getPrecio()."')";
+		$query = "INSERT INTO usuario(id, admin, contrasena, nombre) 
+		VALUES('".$usuario->getId()."', '".$usuario->getAdmin()."', '".$usuario->getContrasena()."', '".$usuario->getNombre()."')";
 
 		if (!$result = mysqli_query($con, $query)) {
 	        exit(mysqli_error($con));

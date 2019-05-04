@@ -9,16 +9,16 @@
 <table class="table table-sm table-bordered table-striped">
 						<tr>
 							<th>Id</th>
-							<th>Codigo</th>
-							<th style="width:20%">Descripción</th>
-							<th>Tipo</th>
-							<th>Fecha Ingreso</th>
-							<th>Precio</th>
+							
+							<th style="width:20%">Nombre</th>
+							<th>Admin</th>
+							<th>Contraseña</th>
+							
 							
 							<th>Eliminar</th>
 						</tr>';
 
-	$query = "SELECT * FROM libro";
+	$query = "SELECT * FROM usuario";
 
 	if (!$result = mysqli_query($con, $query)) {
         exit(mysqli_error($con));
@@ -31,17 +31,12 @@
     	while($row = mysqli_fetch_assoc($result))
     	{
     		$data .= '<tr>
-				
 				<td>'.$row['id'].'</td>
-				<td>'.$row['codigo'].'</td>
-				<td>'.$row['descripcion'].'</td>
-				<td>'.$row['tipo'].'</td>
-				<td>'.$row['fechaIngreso'].'</td>
-				<td>₡ '.number_format($row['precio'], 2).'</td>
-			
-			
+				<td>'.$row['nombre'].'</td>
+				<td>'.$row['admin'].'</td>
+				<td>***************</td>
 				<td>
-					<button onclick="Delete('.$row['id'].')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+					<button onclick="Delete(\''.$row['id'].'\')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
 				</td>
     		</tr>';
     		$number++;

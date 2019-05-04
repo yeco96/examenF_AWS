@@ -36,7 +36,7 @@ require '../validar-accesoCrud.php';
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Usuario</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" onclick="cerrar()">Cerrar Sesión</a>
+                                            <a class="dropdown-item" href="../cerrar.php">Cerrar Sesión</a>
               </div>
             </li>
           </ul>
@@ -61,7 +61,7 @@ require '../validar-accesoCrud.php';
           <div class="row">
             <div class="col-md-12">
               <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Agregar Libro</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Agregar Usuario</button>
               </div>
             </div>
           </div>
@@ -89,26 +89,27 @@ require '../validar-accesoCrud.php';
 
               <div class="modal-body">
                 <div class="form-group">
-                  <label for="codigo">Codigo</label>
-                  <input type="text" id="codigo" maxlength="13" value="" class="form-control" />
+                  <label for="id">Usuario</label>
+                  <input type="text" id="id" maxlength="13" value="" class="form-control" />
                 </div>
                 <div class="form-group">
-                  <label for="descripcion">Descripción</label>
-                  <input type="text" id="descripcion" value="" class="form-control" />
-                </div>
-                <div class="form-group">
-                  <label for="tipo">Tipo</label>
-                  <input type="text" id="tipo" class="form-control" value="" />
-                </div>
-                <div class="form-group">
-                  <label for="fechaIngreso">Fecha Ingreso</label>
-                  <input type="date" id="fechaIngreso" class="form-control" value="" />
-                </div>
-                <div class="form-group">
-                  <label for="precio">Precio</label>
-                  <input type="number" id="precio" class="form-control" value="" />
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" value="" class="form-control" />
                 </div>
 
+                <div class="form-group">
+                  <label for="admin">Rol</label>
+                  <select id="admin" class="form-control">
+                    <option value="1">Administrador</option>
+                    <option value="0">Cliente</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contrasena">Contraseña</label>
+                  <input type="password" id="contrasena" class="form-control" value="" />
+                </div>
+      
 
               </div>
               <div class="modal-footer">

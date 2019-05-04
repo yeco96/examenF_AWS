@@ -36,7 +36,7 @@ require '../validar-accesoCrud.php';
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Usuario</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" onclick="cerrar()">Cerrar Sesión</a>
+                            <a class="dropdown-item" href="cerrar.php">Cerrar Sesión</a>
               </div>
             </li>
           </ul>

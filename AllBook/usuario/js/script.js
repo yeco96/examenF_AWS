@@ -62,71 +62,19 @@ function loggin() {
 
 function addRecord() {
 
-    var codigo = $("#codigo").val();
-    var descripcion = $("#descripcion").val();
-    var tipo = $("#tipo").val();
-    var fechaIngreso = $("#fechaIngreso").val();
-    var precio = $("#precio").val();
-
-    if (!codigo || codigo == "") {
-
-        var dialog = new Messi(
-            'Debe ingresar codigo.',
-            {
-                title: 'Mensaje',
-                titleClass: 'anim error',
-                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
-            }
-        );
-
-        return;
-    }  
-
-    if (!descripcion || descripcion == "") {
-        var dialog = new Messi(
-            'Debe ingresar descripcion.',
-            {
-                title: 'Mensaje',
-                titleClass: 'anim error',
-                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
-            }
-        );
-
-        return;
-    } 
+    var id = $("#id").val();
+    var admin = $("#admin").val();
+    var nombre = $("#nombre").val();
+    var contrasena = $("#contrasena").val();
     
-    if (!tipo || tipo == "") {
-        var dialog = new Messi(
-            'Debe ingresar un tipo.',
-            {
-                title: 'Mensaje',
-                titleClass: 'anim error',
-                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
-            }
-        );
 
-        return;
-    } 
-
-    if (!fechaIngreso || fechaIngreso == "") {
-        var dialog = new Messi(
-            'Debe ingresar una fechaIngreso.',
-            {
-                title: 'Mensaje',
-                titleClass: 'anim error',
-                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
-            }
-        );
-        return;
-    }
-
+    
 
     $.post("ajax/addRecord.php", {
-        codigo: codigo,
-        descripcion: descripcion,
-        tipo: tipo,
-        fechaIngreso: fechaIngreso,
-        precio: precio
+        id: id,
+        admin: admin,
+        nombre: nombre,
+        contrasena: contrasena
     }, function (data, status) {
 
         $("#add_new_record_modal").modal("hide");
@@ -134,11 +82,10 @@ function addRecord() {
         readRecords();
 
 
-        $("#codigo").val("");
-        $("#descripcion").val("");
-        $("#tipo").val("");
-        $("#fechaIngreso").val("");
-        $("#precio").val("");
+        $("#id").val("");
+        $("#admin").val("");
+        $("#nombre").val("");
+        $("#contrasena").val("");
 
         var dialog = new Messi(
             data,
@@ -162,7 +109,7 @@ function readRecords() {
 
 function Delete(id) {
     var dialog = new Messi(
-        'Esta seguro de eliminar el libro?',
+        'Esta seguro de eliminar el usuario?',
         {
             title: 'Confirmación',
             buttons: [
@@ -187,6 +134,6 @@ function Delete(id) {
 
 
 $(document).ready(function () {
-    //readRecords();
+    readRecords();
 });
 

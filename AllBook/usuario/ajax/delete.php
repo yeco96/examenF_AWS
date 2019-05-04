@@ -9,7 +9,7 @@ include("../../conexion/bd.php");
     $id = $_POST['id'];
 
     // delete User
-    $query = "DELETE FROM libro WHERE id = '$id'";
+    $query = "DELETE FROM usuario WHERE id = '$id'";
     if (!$result = mysqli_query($con, $query)) {
         exit(mysqli_error($con));
     }

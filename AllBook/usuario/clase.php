@@ -1,8 +1,10 @@
 <?php 
-    private $id;
-    private $admin;
-    private $contrasena;
-    private $nombre;
+class usuario{
+
+    public $id;
+    public $admin;
+    public $contrasena;
+    public $nombre;
 
 
 	/**
@@ -18,6 +20,7 @@
 		$this->admin = $admin;
 		$this->contrasena = $contrasena;
 		$this->nombre = $nombre;
+    }
 	
     /**
      * @return mixed
