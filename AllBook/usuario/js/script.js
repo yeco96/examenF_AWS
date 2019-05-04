@@ -1,4 +1,64 @@
 
+function loggin() {
+
+    var usuario = $("#usuario").val();
+    var contrasena = $("#contrasena").val();
+
+
+    if (!usuario || usuario == "") {
+
+        var dialog = new Messi(
+            'Debe ingresar usuario.',
+            {
+                title: 'Mensaje',
+                titleClass: 'anim error',
+                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
+            }
+        );
+
+        return;
+    }  
+
+    if (!contrasena || contrasena == "") {
+        var dialog = new Messi(
+            'Debe ingresar contrasena.',
+            {
+                title: 'Mensaje',
+                titleClass: 'anim error',
+                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
+            }
+        );
+        return;
+    } 
+
+
+    $.post("usuario/ajax/loggin.php", {
+        usuario: usuario,
+        contrasena: contrasena,
+    }, function (data, status) {
+ $("#usuario").val("");
+        $("#contrasena").val("");
+
+        if(data.status){
+            var dialog = new Messi(
+            data.message,
+            {
+                title: 'Mensaje',
+                titleClass: 'anim error',
+                buttons: [{ id: 0, label: 'Cerrar', val: 'X' }]
+            }
+         );
+            return;
+        }
+
+           window.location.href="menu-principal.php";
+
+       
+    });
+
+
+}
+
 
 function addRecord() {
 
@@ -74,11 +134,11 @@ function addRecord() {
         readRecords();
 
 
-    $("#codigo").val("");
-   $("#descripcion").val("");
- $("#tipo").val("");
-    $("#fechaIngreso").val("");
-   $("#precio").val("");
+        $("#codigo").val("");
+        $("#descripcion").val("");
+        $("#tipo").val("");
+        $("#fechaIngreso").val("");
+        $("#precio").val("");
 
         var dialog = new Messi(
             data,
@@ -127,6 +187,6 @@ function Delete(id) {
 
 
 $(document).ready(function () {
-    readRecords();
+    //readRecords();
 });
 

@@ -39,16 +39,16 @@
             <h5 class="card-title text-center">Iniciar Sesión</h5>
             <form class="form-signin" id="frmLogin" name="frmLogin" method="post">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
-                <label for="inputEmail">Usuario</label>
+                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+                <label for="usuario">Usuario</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
-                <label for="inputPassword">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+                <label for="contrasena">Contraseña</label>
               </div>
               <input type="hidden" name="accion" value="login" /><br>
-             <input type="button" class="btn btn-lg btn-primary btn-block text-uppercase" id="btnLogin" name="Login" value="Ingresar" />
+             <input type="button" class="btn btn-lg btn-primary btn-block text-uppercase" onclick="loggin()" id="btnLogin" name="Login" value="Ingresar" />
 
               <hr class="my-4">
 
@@ -58,6 +58,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Inicio crud jquery -->
+        <script type="text/javascript" src="usuario/js/script.js"></script>
+        <!-- Fin crud jquery-->
 
 </body>
 
