@@ -7,19 +7,17 @@
 <div class="container">   <div class="table-responsive">	
 <table class="table table-sm table-bordered table-striped">
 						<tr>
+							<th>Id</th>
 							<th>Codigo</th>
-							<th>Codigo de Barras</th>
 							<th style="width:20%">Descripción</th>
-							<th>Precio Venta</th>
-							<th>Costo</th>
-							<th>Utilidad</th>
-							<th>Impuesto</th>
-							<th>Existencia</th>
+							<th>Tipo</th>
+							<th>Fecha Ingreso</th>
+							<th>Precio</th>
 							<th></th>
 							<th></th>
 						</tr>';
 
-	$query = "SELECT * FROM articulo";
+	$query = "SELECT * FROM libro";
 
 	if (!$result = mysqli_query($con, $query)) {
         exit(mysqli_error($con));
@@ -33,20 +31,18 @@
     	{
     		$data .= '<tr>
 				
+				<td>'.$row['id'].'</td>
 				<td>'.$row['codigo'].'</td>
-				<td>'.$row['codigoBarras'].'</td>
 				<td>'.$row['descripcion'].'</td>
-				<td>₡ '.number_format($row['precioVenta'], 2).'</td>
-				<td>₡ '.number_format($row['costo'], 2).'</td>
-				<td>'.number_format($row['utilidad'], 2).' %</td>
-				<td>'.number_format($row['impuesto'], 2).' %</td>
-				<td>'.$row['existencia'].'</td>
-				
+				<td>'.$row['tipo'].'</td>
+				<td>'.$row['fechaIngreso'].'</td>
+				<td>₡ '.number_format($row['precio'], 2).'</td>
+			
 				<td>
-					<button onclick="GetUserDetails('.$row['codigo'].')" class="btn btn-info"><i class="fas fa-edit"></i></button>
+					<button onclick="GetUserDetails('.$row['id'].')" class="btn btn-info"><i class="fas fa-edit"></i></button>
 				</td>
 				<td>
-					<button onclick="DeleteUser('.$row['codigo'].')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+					<button onclick="DeleteUser('.$row['id'].')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
 				</td>
     		</tr>';
     		$number++;

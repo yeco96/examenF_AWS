@@ -1,8 +1,5 @@
 <?php
 require '../validar-accesoCrud.php';
-$nombre = $_SESSION["datos-usuario"]["nombre"];
-$apellido = $_SESSION["datos-usuario"]["apellido"];
-$rol = $_SESSION["datos-usuario"]["rol"];
 ?>
 
 <!doctype html>
@@ -13,14 +10,14 @@ $rol = $_SESSION["datos-usuario"]["rol"];
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Sistema de Compras</title>
+  <title>All Book S.A</title>
   <?php include '../referenciasCrud.html'; ?>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-        <a class="navbar-brand" href="menu-principal.php">Ferretería Caramel</a>
+        <a class="navbar-brand" href="menu-principal.php">All Book S.A</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,36 +29,12 @@ $rol = $_SESSION["datos-usuario"]["rol"];
               </a>
             </li>
 
-            <?php
-            if ($rol == "admin") {
-              ?>
-
-              <li class="nav-item">
-                <a class="nav-link" href="../menu-usuario.php">usuario</a>
-              </li>
-
-              <li class="nav-item active">
-                <a class="nav-link" href="articulo/index.php">articulo <span class="sr-only">(current)</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="../compra/index.php">compra</a>
-              </li>
-            <?php
-          } else {
-            ?>
-              <li class="nav-item">
-                <a class="nav-link" href="../compra/index.php">compra</a>
-              </li>
-
-            <?php
-          }
-          ?>
+          
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuario</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#"><?php echo $nombre . "  (" . $rol . ")"; ?></a>
+                <a class="dropdown-item" href="#">Usuario</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" onclick="cerrar()">Cerrar Sesión</a>
               </div>
@@ -88,7 +61,7 @@ $rol = $_SESSION["datos-usuario"]["rol"];
           <div class="row">
             <div class="col-md-12">
               <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Agregar Articulo</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Agregar Libro</button>
               </div>
             </div>
           </div>

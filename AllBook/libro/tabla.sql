@@ -3,7 +3,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-CREATE TABLE IF NOT EXISTS `articulo` (
+CREATE TABLE IF NOT EXISTS `libro` (
   `id` int(11) NOT NULL,
   `codigo` varchar(45) CHARACTER SET latin1 NOT NULL,
   `descripcion` varchar(45)  CHARACTER SET latin1 DEFAULT NULL,
